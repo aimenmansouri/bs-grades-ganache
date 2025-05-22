@@ -1,0 +1,199 @@
+{
+  "address": "0x5b1869D9A4C187F2EAa108f3062412ecf0526b24",
+  "abi": [
+    {
+      "type": "constructor",
+      "stateMutability": "undefined",
+      "payable": false,
+      "inputs": []
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "GradeAdded",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "studentId",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "courseId",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "grade",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "UserAddressLinked",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "userId",
+          "indexed": false
+        },
+        {
+          "type": "address",
+          "name": "userAddress",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "addGrade",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "studentId"
+        },
+        {
+          "type": "uint256",
+          "name": "courseId"
+        },
+        {
+          "type": "uint256",
+          "name": "grade"
+        },
+        {
+          "type": "uint256",
+          "name": "kind"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "getUserAddress",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "userId"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "grades",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bytes32",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "linkUserAddress",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "userId"
+        },
+        {
+          "type": "address",
+          "name": "userAddress"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "userAddresses",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "verifyGrade",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "studentId"
+        },
+        {
+          "type": "uint256",
+          "name": "courseId"
+        },
+        {
+          "type": "uint256",
+          "name": "grade"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": ""
+        }
+      ]
+    }
+  ]
+}

@@ -2,24 +2,29 @@ const hre = require("hardhat");
 const fs = require("fs");
 
 async function main() {
-  const [deployer] = await hre.ethers.getSigners();
+  const ethers = hre.ethers;
+  const [deployer] = await ethers.getSigners();
 
-  console.log("Deploying contracts with the account:", deployer.address);
-  console.log("Account balance:", (await deployer.getBalance()).toString());
+  console.log(
+    "Deploying contracts with the account:",
+    await deployer.getAddress()
+  );
+  console.log(
+    "Account balance:",
+    (await ethers.provider.getBalance(deployer.address)).toString()
+  );
 
-  const GradeVerification = await hre.ethers.getContractFactory(
+  const GradeVerification = await ethers.getContractFactory(
     "GradeVerification"
   );
-  const gradeVerification = await GradeVerification.deploy();
+  const gradeVerification = await GradeVerification.deploy(); // ethers v6: await deploy auto-deploys
 
-  await gradeVerification.deployed();
-
-  console.log("GradeVerification deployed to:", gradeVerification.address);
+  console.log("GradeVerification deployed to:", gradeVerification.target); // Use .target in ethers v6
 
   // Save contract address and ABI for Laravel/React integration
   const contractData = {
-    address: gradeVerification.address,
-    abi: JSON.parse(gradeVerification.interface.format("json")),
+    address: gradeVerification.target, // ethers v6 uses .target instead of .address
+    abi: JSON.parse(GradeVerification.interface.formatJson()),
   };
 
   fs.writeFileSync(
